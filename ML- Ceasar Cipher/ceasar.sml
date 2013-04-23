@@ -26,7 +26,7 @@ fun ceasar (stringL:string, shift:int, choice:int) =
 		fun dencrpt(nil, shift) = nil
 		|dencrpt(input as x::xs, shift) =
 		if (test(x,shift) = true) then 
-		chr((ord(x) - shift) + 26) :: dencrpt(xs, shift)
+		chr((ord(x) - shift)) :: dencrpt(xs, shift)
 		else 
 		chr((ord(x) + 26) - (shift-1)) :: dencrpt(xs, shift);
 		
