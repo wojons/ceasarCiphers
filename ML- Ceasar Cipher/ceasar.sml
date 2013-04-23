@@ -42,7 +42,7 @@ fun ceasar (stringL:string, shift:int, choice:int) =
 	in
 	if (choice =1) then 
 	print(String.implode(encrpt(input, shift)) ^ "\n")
-	else if (choice = 2) then print(String.implode(dencrpt(input, shift)) ^ "\n")
+	else if (choice = 2) then print(String.implode(encrpt(input, shift*-1)) ^ "\n")
 	else if (choice = 3) then print ((looper(input, 26)) ^ "\n")
 	else print("bluh")
 end;
