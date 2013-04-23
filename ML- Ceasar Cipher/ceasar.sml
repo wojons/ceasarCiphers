@@ -26,9 +26,9 @@ fun ceasar (stringL:string, shift:int, choice:int) =
 		fun dencrpt(nil, shift) = nil
 		|dencrpt(input as x::xs, shift) =
 		if (test(x,shift) = true) then 
-		chr((ord(x) - shift) + 26) :: dencrpt(xs, shift)
+		chr((ord(x) - shift) - 26) :: dencrpt(xs, shift)
 		else 
-		chr((ord(x) - shift) - 26) :: dencrpt(xs, shift);
+		chr((ord(x) - shift)) :: dencrpt(xs, shift);
 		
 		fun allprint(input, x:int) =
 		"Caesar " ^ Int.toString(x) ^": " ^ String.implode(encrpt(input,x)) ^ "\n";
@@ -42,7 +42,7 @@ fun ceasar (stringL:string, shift:int, choice:int) =
 	in
 	if (choice =1) then 
 	print(String.implode(encrpt(input, shift)) ^ "\n")
-	else if (choice = 2) then print(String.implode(encrpt(input, shift*-1)) ^ "\n")
+	else if (choice = 2) then print(String.implode(dencrpt(input, shift*-1)) ^ "\n")
 	else if (choice = 3) then print ((looper(input, 26)) ^ "\n")
 	else print("bluh")
 end;
